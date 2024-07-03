@@ -40,6 +40,16 @@ mainloop:
 
 }
 
+
+// TEXT DECORATIONS -------------------------
 func clear() {
 	fmt.Println("\033[H\033[J")
+}
+
+func lineSingleDecoration() {
+	fmt.Println("___________________________")
+}
+
+func lineDoubleDecoration() {
+	fmt.Println("===========================")
 }

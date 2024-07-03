@@ -9,8 +9,8 @@ func countingNumbers() {
 
 	for {
 		clear()
-		fmt.Println("Counting Numbers\n")
-		fmt.Println("Counts the numbers between n and k")
+		fmt.Println("Counting Numbers")
+		fmt.Println("Counts the numbers (or multiples) between n and k")
 		fmt.Println("\nFormula:\nn - k + 1")
 		lineSingleDecoration()
 
@@ -29,13 +29,14 @@ func countingNumbers() {
 
 		// Need to find multiples between upper and lower bounds
 		if m != 1 {
+			
 			// first method
 			countAndDivide(n, k, m)
 			// second method
 			findMultipleNK(&n, &k, m)
+			lineSingleDecoration()
 		}
 
-		lineSingleDecoration()
 		result := countNK(n, k)
 		fmt.Printf("\n%v - %v + 1 \n=\n%v\n\n", n, k, result)
 
@@ -50,6 +51,7 @@ func countingNumbers() {
 	}
 }
 
+// First (very quick) method
 func countAndDivide(n, k, m int) {
 	var countedAndDivided float64 = float64(countNK(n, k) / m)
 	floor := math.Floor(countedAndDivided)
@@ -57,6 +59,7 @@ func countAndDivide(n, k, m int) {
 	lineSingleDecoration()
 }
 
+// Second (long) method
 func findMultipleNK(n *int, k *int, m int) {
 
 	// finds initial remainders
@@ -92,6 +95,7 @@ func findMultipleNK(n *int, k *int, m int) {
 	fmt.Printf("\nDividing upper and lower bounds by %v to get: \nn = %v\nk = %v\n", m, *n, *k)
 }
 
+// Order to n > k
 func checkNK(n, k *int) {
 	if *n < *k {
 		// Need to swap as n is less than k
@@ -100,17 +104,10 @@ func checkNK(n, k *int) {
 		*k = *n ^ *k
 		*n = *n ^ *k
 	}
-}
+}``
 
+// Main function
 func countNK(n, k int) int {
 	return n - k + 1
 
-}
-
-func lineSingleDecoration() {
-	fmt.Println("___________________________")
-}
-
-func lineDoubleDecoration() {
-	fmt.Println("===========================")
 }
