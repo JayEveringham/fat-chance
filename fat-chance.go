@@ -16,11 +16,11 @@ mainloop:
 		fmt.Println("\n\nChoose: ")
 		fmt.Scan(&choice)
 
-		clear()
 
 		switch choice {
 		case 0:
 			{
+				clear()
 				fmt.Println("Farewell!\n")
 				break mainloop
 			}
