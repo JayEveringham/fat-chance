@@ -22,8 +22,13 @@ func multiplicationAndFactorials() {
 		fmt.Scan(&k)
 		lineSingleDecoration()
 
-		fmt.Printf("%e\n", float64(sequenceWithoutRepetition(n, k)))
-
+		if n < k {
+			fmt.Println(("Invalid: k should be <= n"))
+		} else if k <= 0 {
+			fmt.Println("Invalid: k should be > 0")
+		} else {
+			fmt.Printf("%v\n", float64(sequenceWithoutRepetition(n, k)))
+		}
 		lineDoubleDecoration()
 		fmt.Println("1. Continue")
 		fmt.Println("2. Return to main menu")
