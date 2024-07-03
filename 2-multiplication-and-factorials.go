@@ -22,7 +22,7 @@ func multiplicationAndFactorials() {
 		fmt.Scan(&k)
 		lineSingleDecoration()
 
-		fmt.Println(sequenceWithoutRepetition(n, k))
+		fmt.Printf("%e\n", float64(sequenceWithoutRepetition(n, k)))
 
 		lineDoubleDecoration()
 		fmt.Println("1. Continue")
