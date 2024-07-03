@@ -9,6 +9,7 @@ func countingNumbers() {
 		fmt.Println("Counting Numbers\n")
 		fmt.Println("Counts the numbers between n and k")
 		fmt.Println("\nFormula:\nn - k + 1")
+		lineSingleDecoration()
 
 		var n, k, m int
 		var choice int
@@ -27,9 +28,11 @@ func countingNumbers() {
 			findMultipleNK(&n, &k, m)
 		}
 
+		lineSingleDecoration()
 		result := countNK(n, k)
 		fmt.Printf("\n%v - %v + 1 \n=\n%v\n\n", n, k, result)
 
+		lineDoubleDecoration()
 		fmt.Println("1. Continue")
 		fmt.Println("2. Return to main menu")
 		fmt.Scan(&choice)
@@ -50,7 +53,7 @@ func findMultipleNK(n *int, k *int, m int) {
 	fmt.Printf("%v mod %v = %v\n", *n, m, nmodm)
 	fmt.Printf("%v mod %v = %v\n", *k, m, kmodm)
 
-	fmt.Printf("\nMultiple of %v equal to or lower than %v:\n", m, *n)
+	fmt.Printf("\nMultiple of %v <= %v:\n", m, *n)
 
 	// find upper multiple below n
 	if *n < 0 {
@@ -59,8 +62,8 @@ func findMultipleNK(n *int, k *int, m int) {
 		*n -= (*n % m)
 	}
 
-	fmt.Printf("=%v", *n)
-	fmt.Printf("\nMultiple of %v equal to or higher than %v:\n", m, *k)
+	fmt.Printf("%v", *n)
+	fmt.Printf("\nMultiple of %v >= %v:\n", m, *k)
 
 	// find lower multiple above k
 	if *k < 0 {
@@ -68,7 +71,7 @@ func findMultipleNK(n *int, k *int, m int) {
 	} else {
 		*k += m - (*k % m)
 	}
-	fmt.Printf("=%v\n", *k)
+	fmt.Printf("%v\n", *k)
 
 	*n /= m
 	*k /= m
@@ -88,4 +91,12 @@ func checkNK(n, k *int) {
 func countNK(n, k int) int {
 	return n - k + 1
 
+}
+
+func lineSingleDecoration() {
+	fmt.Println("___________________________")
+}
+
+func lineDoubleDecoration() {
+	fmt.Println("===========================")
 }
