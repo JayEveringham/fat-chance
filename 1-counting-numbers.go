@@ -104,7 +104,7 @@ func checkNK(n, k *int) {
 		*k = *n ^ *k
 		*n = *n ^ *k
 	}
-}``
+}
 
 // Main function
 func countNK(n, k int) int {
