@@ -10,7 +10,7 @@ func countingNumbers() {
 	for {
 		clear()
 		fmt.Println("Counting Numbers")
-		fmt.Println("Counts the numbers (or multiples) between n and k")
+		fmt.Println("-> Counts the numbers (or multiples) between n and k")
 		fmt.Println("\nFormula:\nn - k + 1")
 		lineSingleDecoration()
 

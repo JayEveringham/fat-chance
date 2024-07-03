@@ -11,7 +11,7 @@ mainloop:
 	for {
 
 		fmt.Println("1. Counting")
-		fmt.Println("2. [placeholder]")
+		fmt.Println("2. Factorials")
 		fmt.Println("0. Exit")
 		fmt.Print("\n\nChoose: ")
 		fmt.Scan(&choice)
@@ -29,7 +29,7 @@ mainloop:
 			}
 		case 2:
 			{
-				fmt.Println("You have selected 2:")
+				multiplicationAndFactorials()
 			}
 		default:
 			{
