@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func countingNumbers() {
 
@@ -20,11 +23,15 @@ func countingNumbers() {
 		fmt.Scan(&k)
 		fmt.Print("Enter a multiple to count (default: 1): ")
 		fmt.Scan(&m)
+		lineSingleDecoration()
 
 		checkNK(&n, &k) // checks for upper and lower values to conform with formula
 
 		// Need to find multiples between upper and lower bounds
 		if m != 1 {
+			// first method
+			countAndDivide(n, k, m)
+			// second method
 			findMultipleNK(&n, &k, m)
 		}
 
@@ -41,6 +48,13 @@ func countingNumbers() {
 			break
 		}
 	}
+}
+
+func countAndDivide(n, k, m int) {
+	var countedAndDivided float64 = float64(countNK(n, k) / m)
+	floor := math.Floor(countedAndDivided)
+	fmt.Printf("There are %v multiples of %v between %v and %v\n", floor, m, n, k)
+	lineSingleDecoration()
 }
 
 func findMultipleNK(n *int, k *int, m int) {

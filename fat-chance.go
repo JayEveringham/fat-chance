@@ -13,9 +13,8 @@ mainloop:
 		fmt.Println("1. Counting")
 		fmt.Println("2. [placeholder]")
 		fmt.Println("0. Exit")
-		fmt.Println("\n\nChoose: ")
+		fmt.Print("\n\nChoose: ")
 		fmt.Scan(&choice)
-
 
 		switch choice {
 		case 0:
