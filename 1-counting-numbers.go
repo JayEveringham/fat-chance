@@ -13,12 +13,12 @@ func countingNumbers() {
 		var n, k int
 		var choice int
 
-		fmt.Print("\nn: ")
+		fmt.Print("\nFirst integer: ")
 		fmt.Scan(&n)
-		fmt.Print("k: ")
+		fmt.Print("Second integer: ")
 		fmt.Scan(&k)
 
-		result := countNK(n, k)
+		result := countNK(&n, &k)
 		fmt.Printf("\n%v - %v + 1 \n=\n%v\n\n", n, k, result)
 
 		fmt.Println("1. Continue")
@@ -31,7 +31,13 @@ func countingNumbers() {
 	}
 }
 
-func countNK(n, k int) int {
-	return n - k + 1
-
+func countNK(n, k *int) int {
+	if *n < *k {
+		// Need to swap variables
+		// Bitwise XOR!
+		*n = *n ^ *k
+		*k = *n ^ *k
+		*n = *n ^ *k
+	}
+	return *n - *k + 1
 }
