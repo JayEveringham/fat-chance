@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func countingNumbers() {
+func countingModule() {
 
 	for {
 		clear()

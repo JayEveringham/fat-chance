@@ -11,7 +11,8 @@ mainloop:
 	for {
 
 		fmt.Println("1. Counting")
-		fmt.Println("2. Factorials")
+		fmt.Println("2. Sequences")
+		fmt.Println("3. Collections")
 		fmt.Println("0. Exit")
 		fmt.Print("\n\nChoose: ")
 		fmt.Scan(&choice)
@@ -25,11 +26,15 @@ mainloop:
 			}
 		case 1:
 			{
-				countingNumbers()
+				countingModule()
 			}
 		case 2:
 			{
-				multiplicationAndFactorials()
+				sequencesModule()
+			}
+		case 3:
+			{
+				collectionsModule()
 			}
 		default:
 			{

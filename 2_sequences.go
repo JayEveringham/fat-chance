@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func multiplicationAndFactorials() {
+func sequencesModule() {
 
 	for {
 		clear()
