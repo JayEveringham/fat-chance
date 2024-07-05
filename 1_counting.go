@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func countingModule() {
@@ -21,7 +20,7 @@ func countingModule() {
 		fmt.Scan(&n)
 		fmt.Print("Second integer: ")
 		fmt.Scan(&k)
-		fmt.Print("Enter a multiple to count (default: 1): ")
+		fmt.Print("Enter a multiple to count: ")
 		fmt.Scan(&m)
 		lineSingleDecoration()
 
@@ -29,10 +28,6 @@ func countingModule() {
 
 		// Need to find multiples between upper and lower bounds
 		if m != 1 {
-			
-			// first method
-			countAndDivide(n, k, m)
-			// second method
 			findMultipleNK(&n, &k, m)
 			lineSingleDecoration()
 		}
@@ -51,15 +46,7 @@ func countingModule() {
 	}
 }
 
-// First (very quick) method
-func countAndDivide(n, k, m int) {
-	var countedAndDivided float64 = float64(countNK(n, k) / m)
-	floor := math.Floor(countedAndDivided)
-	fmt.Printf("There are %v multiples of %v between %v and %v\n", floor, m, n, k)
-	lineSingleDecoration()
-}
-
-// Second (long) method
+// Counts multiples of m between n and k
 func findMultipleNK(n *int, k *int, m int) {
 
 	// finds initial remainders
