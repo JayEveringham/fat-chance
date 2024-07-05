@@ -27,7 +27,7 @@ func sequencesModule() {
 		} else if k <= 0 {
 			fmt.Println("Invalid: k should be > 0")
 		} else {
-			fmt.Printf("%v\n", float64(sequenceWithoutRepetition(n, k)))
+			fmt.Printf("%v\n", float64(sequences(n, k)))
 		}
 		lineDoubleDecoration()
 		fmt.Println("1. Continue")
@@ -41,7 +41,7 @@ func sequencesModule() {
 }
 
 // main formula
-func sequenceWithoutRepetition(n, k int) int {
+func sequences(n, k int) int {
 	return factorial(n) / factorial(n-k)
 }
 
