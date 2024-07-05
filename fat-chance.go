@@ -12,7 +12,7 @@ mainloop:
 
 		fmt.Println("1. Counting")
 		fmt.Println("2. Sequences")
-		fmt.Println("3. Collections")
+		fmt.Println("3. Collections/Binomials")
 		fmt.Println("4. Multinomials")
 		fmt.Println("0. Exit")
 		fmt.Print("\n\nChoose: ")

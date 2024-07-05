@@ -8,9 +8,9 @@ import (
 func multinomialsModule() {
 	for {
 		clear()
-		fmt.Println("Counting collections")
+		fmt.Println("Multinomials")
 		fmt.Println("-> The number of ways to divide n objects into k groups of sizes a1, a2, ..., ak")
-		fmt.Println("\nFormula:\n(n choose a1, a2,...,ak) = n! / (a1! × a2! ... ak!)")
+		fmt.Println("\nFormula:\n(n choose a1, a2,...,ak) = n! / (a1! * a2! ... ak!)")
 		lineSingleDecoration()
 
 		var n, aInput, aSum int64

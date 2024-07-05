@@ -11,7 +11,7 @@ func collectionsModule() {
 		fmt.Println("Counting collections")
 		fmt.Println("-> The number of collections of k objects without repetition from a set of n objects (n choose k).")
 		fmt.Println("-> This is the same as the number of ways of choosing a collection of (n - k) objects without repetition.")
-		fmt.Println("\nFormula:\nn! / ( (n-k)! × k! )")
+		fmt.Println("\nFormula:\nn! / ( (n-k)! * k! )")
 		lineSingleDecoration()
 
 		var n, k int64
