@@ -47,7 +47,9 @@ func collections(n, k int64) *big.Int {
 	nFact := factorial(n)
 	nkFact := factorial(n-k)
 	kFact :=  factorial(k)
+
 	nkkFact := new(big.Int).Mul(nkFact, kFact)
 	result := new(big.Int).Div(nFact, nkkFact)
+	
 	return result
 }

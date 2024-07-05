@@ -46,7 +46,9 @@ func sequencesModule() {
 func sequences(n, k int64) *big.Int {
 	nFact := factorial(n)
 	nkFact := factorial(n-k)
+
 	result := new(big.Int).Div(nFact, nkFact)
+	
 	return result
 }
 
