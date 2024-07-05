@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	clear()
-	fmt.Println("Welcome to Fat Chance CLI companion!\n\n")
+	fmt.Print("Welcome to Fat Chance CLI companion!\n\n")
 	var choice int
 
 mainloop:
@@ -21,7 +21,7 @@ mainloop:
 		case 0:
 			{
 				clear()
-				fmt.Println("Farewell!\n")
+				fmt.Print("Farewell!\n")
 				break mainloop
 			}
 		case 1:
@@ -38,7 +38,7 @@ mainloop:
 			}
 		default:
 			{
-				fmt.Println("Invalid choice, please choose:\n")
+				fmt.Print("Invalid choice, please choose:\n")
 			}
 		}
 	}
