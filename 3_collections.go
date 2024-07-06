@@ -8,10 +8,10 @@ import (
 func collectionsModule() {
 	for {
 		clear()
-		fmt.Println("Counting collections")
-		fmt.Println("-> The number of collections of k objects without repetition from a set of n objects (n choose k).")
-		fmt.Println("-> This is the same as the number of ways of choosing a collection of (n - k) objects without repetition.")
-		fmt.Println("\nFormula:\nn! / k!(n-k)!")
+		fmt.Println("Counting Collections")
+		fmt.Println("-> Calculates the number of ways to choose k objects without repetition from a set of n objects (n choose k).")
+		fmt.Println("-> This is equivalent to the number of ways to choose (n - k) objects without repetition.")
+		fmt.Println("\nFormula:\nn! / (k!(n-k)!)")
 		lineSingleDecoration()
 
 		var n, k int64
@@ -45,11 +45,11 @@ func collectionsModule() {
 // main formula
 func collections(n, k int64) *big.Int {
 	nFact := factorial(n)
-	nkFact := factorial(n-k)
-	kFact :=  factorial(k)
+	nkFact := factorial(n - k)
+	kFact := factorial(k)
 
 	nkkFact := new(big.Int).Mul(nkFact, kFact)
 	result := new(big.Int).Div(nFact, nkkFact)
-	
+
 	return result
 }
