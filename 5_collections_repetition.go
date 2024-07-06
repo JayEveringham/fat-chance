@@ -23,14 +23,13 @@ func collectionsRepModule() {
 		fmt.Scan(&k)
 		lineSingleDecoration()
 
-		if n < k {
-			fmt.Println(("Invalid: k should be <= n"))
-		} else if k <= 0 {
-			fmt.Println("Invalid: k should be > 0")
+		if n == 0 {
+			fmt.Println("n cannot be 0")
 		} else {
 			result := collectionsRep(n, k)
 			fmt.Printf("%v\n", result)
 		}
+		
 		lineDoubleDecoration()
 		fmt.Println("1. Continue")
 		fmt.Println("2. Return to main menu")
