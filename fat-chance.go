@@ -14,6 +14,8 @@ mainloop:
 		fmt.Println("2. Sequences")
 		fmt.Println("3. Collections/Binomials")
 		fmt.Println("4. Multinomials")
+		fmt.Println("5. Collections with repetition")
+
 		fmt.Println("0. Exit")
 		fmt.Print("\n\nChoose: ")
 		fmt.Scan(&choice)
@@ -40,6 +42,10 @@ mainloop:
 		case 4:
 			{
 				multinomialsModule()
+			}
+		case 5:
+			{
+				collectionsRepModule()
 			}
 		default:
 			{
