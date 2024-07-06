@@ -9,8 +9,15 @@ func countingModule() {
 	for {
 		clear()
 		fmt.Println("Counting Numbers")
-		fmt.Println("-> Counts the numbers (or multiples) between n and k")
-		fmt.Println("\nFormula:\nn - k + 1")
+		fmt.Println("-> Counts the numbers (or multiples) between two integers, n and k, inclusive.")
+		fmt.Println("-> If a multiple (m) is provided, it counts the multiples of m between n and k.")
+		fmt.Println("\nFormula:")
+		fmt.Println("For counting numbers: n - k + 1")
+		fmt.Println("For counting multiples of m between n and k:")
+		fmt.Println("1. Find the largest multiple of m less than or equal to n.")
+		fmt.Println("2. Find the smallest multiple of m greater than or equal to k.")
+		fmt.Println("3. Divide both bounds by m.")
+		fmt.Println("4. Apply the formula (n - k + 1) on the adjusted bounds.")
 		lineSingleDecoration()
 
 		var n, k, m int
