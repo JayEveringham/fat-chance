@@ -23,14 +23,18 @@ func collectionsModule() {
 		fmt.Scan(&k)
 		lineSingleDecoration()
 
-		if n < k {
-			fmt.Println(("Invalid: k should be <= n"))
+		// Input validation
+		if n < 0 {
+			fmt.Println("Invalid input: n should be >= 0")
 		} else if k <= 0 {
-			fmt.Println("Invalid: k should be > 0")
+			fmt.Println("Invalid input: k should be >= 0")
+		} else if k > n {
+			fmt.Println("Invalid input: k should be <= n")
 		} else {
 			result := collections(n, k)
-			fmt.Printf("%v\n", result)
+			fmt.Printf("Result: %v\n", result)
 		}
+
 		lineDoubleDecoration()
 		fmt.Println("1. Continue")
 		fmt.Println("2. Return to main menu")
