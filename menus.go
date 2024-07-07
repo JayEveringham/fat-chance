@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math/big"
+
+	"github.com/JayEveringham/fat-chance/scientific"
 )
 
 var GlobalMem *big.Int = new(big.Int)
@@ -96,7 +98,7 @@ func subMenu(result *big.Int) bool {
 
 func displayMem() bool {
 	if GlobalMem.Cmp(big.NewInt(0)) != 0 {
-		fmt.Printf("M: %s\n", GlobalMem.String())
+		fmt.Printf("M: %s\n", scientific.BigIntToScientific(GlobalMem))
 		lineSingleDecoration()
 		return true
 	}
