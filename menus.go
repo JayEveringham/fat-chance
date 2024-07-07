@@ -24,7 +24,7 @@ mainloop:
 		fmt.Println("5. Collections with repetition")
 
 		fmt.Println("0. Exit")
-		fmt.Print("\n\nChoose: ")
+		fmt.Print("\n\n>")
 		fmt.Scan(&choice)
 
 		switch choice {
@@ -71,6 +71,7 @@ func subMenu() bool {
 	fmt.Println("0. Store to memory")
 	fmt.Println("1. Continue")
 	fmt.Println("2. Return to main menu")
+	fmt.Print(">")
 	fmt.Scan(&choice)
 	if choice == 0 {
 		// TODO (global mem = result)
