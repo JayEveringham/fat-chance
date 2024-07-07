@@ -1,9 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/big"
+)
 
+var GlobalMem *big.Int = new(big.Int)
+
+// MAIN MENU
 func main() {
 	clear()
+
 	fmt.Print("Welcome to Fat Chance CLI companion!\n\n")
 	var choice int
 
@@ -56,6 +63,23 @@ mainloop:
 
 }
 
+// SUB MENU
+// TODO: take result as argument
+func subMenu() bool {
+	var choice int
+	lineDoubleDecoration()
+	fmt.Println("0. Store to memory")
+	fmt.Println("1. Continue")
+	fmt.Println("2. Return to main menu")
+	fmt.Scan(&choice)
+	if choice == 0 {
+		// TODO (global mem = result)
+	} else if choice == 2 {
+		clear()
+		return true
+	}
+	return false
+}
 
 // TEXT DECORATIONS -------------------------
 func clear() {
