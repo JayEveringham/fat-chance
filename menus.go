@@ -72,17 +72,24 @@ mainloop:
 // SUB MENU
 func subMenu(result *big.Int) bool {
 	var choice int
-	lineDoubleDecoration()
-	fmt.Println("0. Store to memory")
-	fmt.Println("1. Continue")
-	fmt.Println("2. Return to main menu")
-	fmt.Print(">")
-	fmt.Scan(&choice)
-	if choice == 0 {
-		GlobalMem.Set(result)
-	} else if choice == 2 {
-		clear()
-		return true
+	for {
+		lineDoubleDecoration()
+		fmt.Println("0. Store to memory")
+		fmt.Println("1. Continue")
+		fmt.Println("2. Return to main menu")
+		fmt.Print(">")
+		fmt.Scan(&choice)
+		if choice == 0 {
+			GlobalMem.Set(result)
+			fmt.Print(("Stored to memory\n>"))
+			fmt.Scan(&choice)
+		}
+		if choice == 1 {
+			break
+		} else if choice == 2 {
+			clear()
+			return true
+		}
 	}
 	return false
 }
