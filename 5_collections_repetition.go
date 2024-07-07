@@ -8,6 +8,8 @@ import (
 func collectionsRepModule() {
 	for {
 		clear()
+		displayMem()
+
 		fmt.Println("Counting collections with repetition")
 		fmt.Println("-> The number of collections of k objects, chosen from a pool of n objects with repetition allowed")
 		fmt.Println("\nFormula:\n(n + k - 1) choose k (or n - 1)")
@@ -15,6 +17,7 @@ func collectionsRepModule() {
 		lineSingleDecoration()
 
 		var n, k int64
+		var result = new(big.Int)
 
 		fmt.Print("\nn: ")
 		fmt.Scan(&n)
@@ -25,11 +28,11 @@ func collectionsRepModule() {
 		if n == 0 {
 			fmt.Println("n cannot be 0")
 		} else {
-			result := collectionsRep(n, k)
+			result = collectionsRep(n, k)
 			fmt.Printf("%v\n", result)
 		}
 
-		returnToMain := subMenu()
+		returnToMain := subMenu(result)
 		if returnToMain {
 			break
 		}
@@ -48,4 +51,3 @@ func collectionsRep(n, k int64) *big.Int {
 
 	return result
 }
-

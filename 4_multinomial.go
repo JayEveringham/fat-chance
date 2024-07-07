@@ -8,6 +8,7 @@ import (
 func multinomialsModule() {
 	for {
 		clear()
+		displayMem()
 		fmt.Println("Multinomials")
 		fmt.Println("-> Calculates the number of ways to divide n objects into k groups of sizes a1, a2, ..., ak.")
 		fmt.Println("\nFormula:")
@@ -48,7 +49,7 @@ func multinomialsModule() {
 		result := multinomials(n, a)
 		fmt.Printf("%v\n", result)
 
-		returnToMain := subMenu()
+		returnToMain := subMenu(result)
 		if returnToMain {
 			break
 		}

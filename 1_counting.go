@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"math/big"
 )
 
 func countingModule() {
 
 	for {
 		clear()
+		displayMem()
 		fmt.Println("Counting Numbers")
 		fmt.Println("-> Counts the numbers (or multiples) between two integers, n and k, inclusive.")
 		fmt.Println("-> If a multiple (m) is provided, it counts the multiples of m between n and k.")
@@ -33,7 +35,10 @@ func countingModule() {
 		checkNK(&n, &k) // checks for upper and lower values to conform with formula
 
 		// Need to find multiples between upper and lower bounds
-		if m != 1 {
+
+		if m <= 0 {
+			continue
+		} else if m != 1 {
 			findMultipleNK(&n, &k, m)
 			lineSingleDecoration()
 		}
@@ -41,7 +46,7 @@ func countingModule() {
 		result := countNK(n, k)
 		fmt.Printf("\n%v - %v + 1 \n=\n%v\n\n", n, k, result)
 
-		returnToMain := subMenu()
+		returnToMain := subMenu(big.NewInt(int64(result)))
 		if returnToMain {
 			break
 		}

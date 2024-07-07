@@ -9,6 +9,7 @@ func sequencesModule() {
 
 	for {
 		clear()
+		displayMem()
 		fmt.Println("Multiplication Principle and Factorials")
 		fmt.Println("-> Calculates the number of sequences of k objects chosen without repetition from a collection of n objects.")
 		fmt.Println("\nFormula:\nn! / (n - k)!")
@@ -16,6 +17,7 @@ func sequencesModule() {
 		lineSingleDecoration()
 
 		var n, k int64
+		var result = new(big.Int)
 
 		fmt.Print("\nn: ")
 		fmt.Scan(&n)
@@ -33,11 +35,11 @@ func sequencesModule() {
 		} else if k == 0 {
 			fmt.Println("Invalid input: k should be > 0")
 		} else {
-			result := sequences(n, k)
+			result = sequences(n, k)
 			fmt.Printf("Result: %v\n", result)
 		}
 
-		returnToMain := subMenu()
+		returnToMain := subMenu(result)
 		if returnToMain {
 			break
 		}

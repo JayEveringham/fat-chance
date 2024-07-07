@@ -8,6 +8,7 @@ import (
 func collectionsModule() {
 	for {
 		clear()
+		displayMem()
 		fmt.Println("Counting Collections")
 		fmt.Println("-> Calculates the number of ways to choose k objects without repetition from a set of n objects (n choose k).")
 		fmt.Println("-> This is equivalent to the number of ways to choose (n - k) objects without repetition.")
@@ -15,6 +16,7 @@ func collectionsModule() {
 		lineSingleDecoration()
 
 		var n, k int64
+		var result = new(big.Int)
 
 		fmt.Print("\nn: ")
 		fmt.Scan(&n)
@@ -30,11 +32,11 @@ func collectionsModule() {
 		} else if k > n {
 			fmt.Println("Invalid input: k should be <= n")
 		} else {
-			result := collections(n, k)
+			result = collections(n, k)
 			fmt.Printf("Result: %v\n", result)
 		}
 
-		returnToMain := subMenu()
+		returnToMain := subMenu(result)
 		if returnToMain {
 			break
 		}
