@@ -32,6 +32,7 @@ mainloop:
 		case -1:
 			{
 				GlobalMem.SetInt64(0)
+				clear()
 			}
 		case 0:
 			{
