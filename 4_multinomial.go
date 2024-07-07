@@ -16,7 +16,7 @@ func multinomialsModule() {
 
 		var n, aInput, aSum int64
 		var a []int64
-		var choice int
+
 		countA := 1
 
 		fmt.Print("\nn: ")
@@ -48,12 +48,8 @@ func multinomialsModule() {
 		result := multinomials(n, a)
 		fmt.Printf("%v\n", result)
 
-		lineDoubleDecoration()
-		fmt.Println("1. Continue")
-		fmt.Println("2. Return to main menu")
-		fmt.Scan(&choice)
-		if choice == 2 {
-			clear()
+		returnToMain := subMenu()
+		if returnToMain {
 			break
 		}
 	}

@@ -15,7 +15,6 @@ func collectionsModule() {
 		lineSingleDecoration()
 
 		var n, k int64
-		var choice int
 
 		fmt.Print("\nn: ")
 		fmt.Scan(&n)
@@ -35,12 +34,8 @@ func collectionsModule() {
 			fmt.Printf("Result: %v\n", result)
 		}
 
-		lineDoubleDecoration()
-		fmt.Println("1. Continue")
-		fmt.Println("2. Return to main menu")
-		fmt.Scan(&choice)
-		if choice == 2 {
-			clear()
+		returnToMain := subMenu()
+		if returnToMain {
 			break
 		}
 	}

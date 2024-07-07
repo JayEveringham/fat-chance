@@ -21,7 +21,6 @@ func countingModule() {
 		lineSingleDecoration()
 
 		var n, k, m int
-		var choice int
 
 		fmt.Print("\nFirst integer: ")
 		fmt.Scan(&n)
@@ -42,14 +41,11 @@ func countingModule() {
 		result := countNK(n, k)
 		fmt.Printf("\n%v - %v + 1 \n=\n%v\n\n", n, k, result)
 
-		lineDoubleDecoration()
-		fmt.Println("1. Continue")
-		fmt.Println("2. Return to main menu")
-		fmt.Scan(&choice)
-		if choice == 2 {
-			clear()
+		returnToMain := subMenu()
+		if returnToMain {
 			break
 		}
+
 	}
 }
 
