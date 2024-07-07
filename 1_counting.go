@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math/big"
+
+	"github.com/JayEveringham/fat-chance/scientific"
 )
 
 func countingModule() {
@@ -44,7 +46,7 @@ func countingModule() {
 		}
 
 		result := countNK(n, k)
-		fmt.Printf("\n%v - %v + 1 \n=\n%v\n\n", n, k, result)
+		fmt.Printf("\n%v - %v + 1 \n=\n%v\n\n", n, k, scientific.BigIntToScientific(big.NewInt(int64(result))))
 
 		returnToMain := subMenu(big.NewInt(int64(result)))
 		if returnToMain {

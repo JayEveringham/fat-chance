@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"github.com/JayEveringham/fat-chance/scientific"
 )
 
 func multinomialsModule() {
@@ -47,7 +48,7 @@ func multinomialsModule() {
 		lineSingleDecoration()
 
 		result := multinomials(n, a)
-		fmt.Printf("%v\n", result)
+		fmt.Printf("%v\n", scientific.BigIntToScientific(result))
 
 		returnToMain := subMenu(result)
 		if returnToMain {

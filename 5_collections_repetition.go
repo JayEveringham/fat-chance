@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"github.com/JayEveringham/fat-chance/scientific"
 )
 
 func collectionsRepModule() {
@@ -29,7 +30,7 @@ func collectionsRepModule() {
 			fmt.Println("n cannot be 0")
 		} else {
 			result = collectionsRep(n, k)
-			fmt.Printf("%v\n", result)
+			fmt.Printf("%v\n", scientific.BigIntToScientific(result))
 		}
 
 		returnToMain := subMenu(result)

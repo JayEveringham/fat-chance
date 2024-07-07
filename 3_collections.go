@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"github.com/JayEveringham/fat-chance/scientific"
 )
 
 func collectionsModule() {
@@ -33,7 +34,7 @@ func collectionsModule() {
 			fmt.Println("Invalid input: k should be <= n")
 		} else {
 			result = collections(n, k)
-			fmt.Printf("Result: %v\n", result)
+			fmt.Printf("Result: %v\n", scientific.BigIntToScientific(result))
 		}
 
 		returnToMain := subMenu(result)
