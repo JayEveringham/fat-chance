@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"time"
+
 	"github.com/JayEveringham/fat-chance/scientific"
 )
 
@@ -57,17 +59,34 @@ func sequences(n, k int64) *big.Int {
 	return result
 }
 
-
 // iterative factorialisation
 func factorial(n int64) *big.Int {
     if n < 0 {
-        return big.NewInt(0) 
+        return big.NewInt(0) // or handle negative input as you see fit
     }
 
     result := big.NewInt(1)
+    start := time.Now()
+    updateInterval := time.Millisecond * 500
+    firstUpdateDone := false
+
     for i := int64(2); i <= n; i++ {
         result.Mul(result, big.NewInt(i))
+
+        if !firstUpdateDone && time.Since(start) > updateInterval {
+            firstUpdateDone = true
+        }
+
+        if firstUpdateDone && time.Since(start) > updateInterval {
+            fmt.Printf("\rCalculating factorial: %d/%d (%.2f%%)", i, n, float64(i)/float64(n)*100)
+            updateInterval += time.Millisecond * 500 // Increase interval for next update
+        }
     }
+
+    if firstUpdateDone {
+        fmt.Printf("\rCalculation complete: %d/%d (100.00%%)\n", n, n)
+    }
+
     return result
 }
 
