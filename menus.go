@@ -22,8 +22,8 @@ mainloop:
 			fmt.Println("-1. Clear memory")
 		}
 		fmt.Println("1. Counting")
-		fmt.Println("2. Sequences")
-		fmt.Println("3. Collections/Binomials")
+		fmt.Println("2. Permutations")
+		fmt.Println("3. Combinations")
 		fmt.Println("4. Multinomials")
 		fmt.Println("5. Collections with repetition")
 		fmt.Println("0. Exit")
