@@ -62,12 +62,12 @@ func sequences(n, k int64) *big.Int {
 // iterative factorialisation
 func factorial(n int64) *big.Int {
     if n < 0 {
-        return big.NewInt(0) // or handle negative input as you see fit
+        return big.NewInt(0) 
     }
 
     result := big.NewInt(1)
     start := time.Now()
-    updateInterval := time.Millisecond * 500
+    updateInterval := time.Millisecond * 500 // 500ms update interval
     firstUpdateDone := false
 
     for i := int64(2); i <= n; i++ {
@@ -77,9 +77,10 @@ func factorial(n int64) *big.Int {
             firstUpdateDone = true
         }
 
+		// Checks if time taken > updateInterval, then starts outputting updates if so
         if firstUpdateDone && time.Since(start) > updateInterval {
             fmt.Printf("\rCalculating factorial: %d/%d (%.2f%%)", i, n, float64(i)/float64(n)*100)
-            updateInterval += time.Millisecond * 500 // Increase interval for next update
+            updateInterval += time.Millisecond * 500 
         }
     }
 
@@ -89,12 +90,3 @@ func factorial(n int64) *big.Int {
 
     return result
 }
-
-// recursive factorialisation
-// func factorial(n int64) *big.Int {
-// 	if n == 0 {
-// 		return big.NewInt(1)
-// 	}
-// 	result := big.NewInt(n)
-// 	return result.Mul(result, factorial(n-1))
-// }
